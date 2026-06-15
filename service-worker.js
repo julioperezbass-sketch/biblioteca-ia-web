@@ -2,11 +2,11 @@ const CACHE_NAME = "biblioteca-ia-musical-v2";
 const APP_SHELL = [
   "/",
   "/index.html",
-  "/biblioteca-ia-web/manifest.webmanifest",
+  "/manifest.webmanifest",
   "/apoyar.html",
   "/contacto.html",
-  "/biblioteca-ia-web/icons/icon-192.png",
-  "/biblioteca-ia-web/icons/icon-512.png"
+  "/icons/icon-192.png",
+  "/icons/icon-512.png"
 ];
 
 self.addEventListener("install", (event) => {
