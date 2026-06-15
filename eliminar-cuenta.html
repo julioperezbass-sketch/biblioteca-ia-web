@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Eliminar cuenta</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      body {
+        background: #1a1a1a;
+        color: #fff;
+        margin: 0;
+      }
+
+      main {
+        margin: 0 auto;
+        max-width: 760px;
+        padding: 28px 18px 52px;
+      }
+
+      h1 {
+        font-size: 34px;
+        line-height: 1.12;
+        margin: 0 0 12px;
+      }
+
+      h2 {
+        color: #a78bfa;
+        font-size: 21px;
+        margin: 28px 0 10px;
+      }
+
+      p,
+      li {
+        color: #d4d4d8;
+        font-size: 16px;
+        line-height: 1.6;
+      }
+
+      a {
+        color: #7dd3fc;
+      }
+
+      form,
+      .box {
+        background: #2a2a2a;
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+        margin-top: 18px;
+        padding: 18px;
+      }
+
+      label {
+        color: #f4f4f5;
+        display: block;
+        font-size: 15px;
+        font-weight: 800;
+        margin: 14px 0 8px;
+      }
+
+      input,
+      textarea {
+        background: #1f1f1f;
+        border: 1px solid #3a3a3a;
+        border-radius: 8px;
+        box-sizing: border-box;
+        color: #fff;
+        font: inherit;
+        padding: 13px 12px;
+        width: 100%;
+      }
+
+      textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      button,
+      .button {
+        background: #7c3aed;
+        border: 0;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-size: 17px;
+        font-weight: 800;
+        margin-top: 16px;
+        padding: 14px 16px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      .small {
+        color: #a1a1aa;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Solicitud de eliminacion de cuenta</h1>
+      <p>
+        Desde esta pagina puedes pedir la eliminacion de tu cuenta de Canciones de Adoracion / Biblioteca IA Musical y de los datos personales asociados.
+      </p>
+
+      <section class="box">
+        <h2>Que datos se eliminan</h2>
+        <ul>
+          <li>Correo electronico de la cuenta.</li>
+          <li>Nombre visible elegido por el usuario.</li>
+          <li>Identificador tecnico de usuario.</li>
+          <li>Accesos premium, pruebas gratuitas o permisos asociados a esa cuenta.</li>
+        </ul>
+        <p class="small">
+          Algunos registros minimos pueden conservarse si son necesarios por obligaciones legales, seguridad, comprobacion de pagos o prevencion de fraude.
+        </p>
+      </section>
+
+      <section class="box">
+        <h2>Si llegaste desde la app</h2>
+        <p>
+          Estas en el lugar correcto. El boton Solicitar eliminacion de cuenta de la app abre esta pagina para que puedas enviar la solicitud con tu correo.
+        </p>
+      </section>
+
+      <form name="eliminar-cuenta" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="eliminar-cuenta" />
+
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" autocomplete="name" required />
+
+        <label for="email">Correo de la cuenta</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" required>Solicito la eliminacion de mi cuenta y de los datos personales asociados.</textarea>
+
+        <button type="submit">Enviar solicitud</button>
+        <p class="small">
+          Si el formulario no funciona, escribe directamente a
+          <a href="mailto:julioramonperez@hotmail.com?subject=Solicitud%20de%20eliminacion%20de%20cuenta">julioramonperez@hotmail.com</a>.
+        </p>
+      </form>
+
+      <p class="small">
+        Consulta tambien la <a href="/biblioteca-ia-web/privacidad.html">politica de privacidad</a>.
+      </p>
+    </main>
+  </body>
+</html>
