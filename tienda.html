@@ -135,6 +135,21 @@
         background: #3f5f5a;
       }
 
+      .download-actions {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 14px;
+      }
+
+      .button.download {
+        margin-top: 0;
+      }
+
+      .button.windows {
+        background: #0f766e;
+      }
+
       .song-list {
         display: grid;
         gap: 7px;
@@ -176,6 +191,10 @@
         }
 
         .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .download-actions {
           grid-template-columns: 1fr;
         }
       }
@@ -238,12 +257,21 @@
       </section>
 
       <section class="notice">
-        <h2>Escuchar sin descargar</h2>
+        <h2>Web y escritorio</h2>
         <p>
-          Puedes usar la biblioteca directamente desde el navegador. Si prefieres una app instalada, tambien puedes descargarla para Mac y Windows.
+          Puedes usar la biblioteca directamente desde el navegador. Si prefieres una app instalada, descarga la version completa de escritorio.
         </p>
-        <p>
-          <a href="/">Abrir biblioteca web</a>
+        <a class="button" href="/">Abrir biblioteca web</a>
+        <div class="download-actions" aria-label="Descargas de escritorio">
+          <a class="button download" href="https://github.com/julioperezbass-sketch/biblioteca-ia-web/releases/download/desktop-v1.0.3/Canciones.de.Adoracion-1.0.3-arm64.dmg">
+            Descargar Mac
+          </a>
+          <a class="button download windows" href="https://github.com/julioperezbass-sketch/biblioteca-ia-web/releases/download/desktop-v1.0.3/Canciones.de.Adoracion-Windows-x64-portable.zip">
+            Descargar Windows
+          </a>
+        </div>
+        <p class="meta">
+          Version de escritorio 1.0.3. El archivo de Mac es el instalador completo, no un parche.
         </p>
       </section>
 
