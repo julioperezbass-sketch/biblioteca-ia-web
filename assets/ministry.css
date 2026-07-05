@@ -1,0 +1,1181 @@
+:root {
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #050403;
+  color: #fff7e8;
+  --bg: #050403;
+  --panel: #0b0906;
+  --panel-soft: #15100a;
+  --line: #3f3320;
+  --text: #fff7e8;
+  --muted: #dcc9a8;
+  --soft: #a99773;
+  --gold: #d6a84f;
+  --gold-strong: #f2c66d;
+  --green: #8da66e;
+  --green-strong: #b2c98b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  background: rgba(5, 4, 3, 0.92);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav {
+  align-items: center;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 14px 18px;
+}
+
+.brand {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-decoration: none;
+}
+
+.nav-links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.nav-links a {
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 9px 11px;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  background: rgba(214, 168, 79, 0.14);
+  color: var(--gold-strong);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 34px 18px 58px;
+}
+
+.home-main {
+  background-image:
+    linear-gradient(90deg, rgba(255, 224, 146, 0.05) 0%, rgba(255, 224, 146, 0.03) 48%, rgba(5, 4, 3, 0.08) 100%),
+    url("/assets/inicio-hero.png?v=20260704-inicio-nuevo");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+}
+
+.home-hero {
+  align-items: center;
+  background-image:
+    linear-gradient(90deg, rgba(255, 224, 146, 0.04) 0%, rgba(255, 224, 146, 0.02) 46%, rgba(5, 4, 3, 0.12) 100%),
+    url("/assets/inicio-hero.png?v=20260704-inicio-nuevo");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  min-height: 640px;
+  overflow: hidden;
+  padding: 92px max(18px, calc((100vw - 1120px) / 2 + 18px)) 64px 18px;
+  position: relative;
+}
+
+.home-hero::after {
+  background: linear-gradient(180deg, transparent 82%, rgba(5, 4, 3, 0.14) 100%);
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.home-hero-content {
+  margin-left: auto;
+  max-width: 590px;
+  padding: 22px 0;
+  position: relative;
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.72);
+  z-index: 1;
+}
+
+.home-hero-subtitle {
+  color: #fff1d1;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(18px, 1.8vw, 25px);
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 0 0 18px;
+  text-align: right;
+}
+
+.home-hero-lines {
+  color: var(--muted);
+  font-size: clamp(18px, 1.55vw, 22px);
+  line-height: 1.48;
+  margin: 0;
+  text-align: right;
+}
+
+.ministry-title-lockup {
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.ministry-name {
+  display: grid;
+  font-family: Georgia, "Times New Roman", serif;
+  justify-items: start;
+  line-height: 0.86;
+  max-width: min(720px, 100%);
+}
+
+.ministry-name span {
+  display: block;
+  letter-spacing: 0;
+  text-shadow: 0 3px 28px rgba(0, 0, 0, 0.78);
+}
+
+.name-small {
+  color: var(--gold-strong);
+  font-size: clamp(38px, 4.6vw, 68px);
+  font-weight: 400;
+}
+
+.name-large {
+  font-weight: 400;
+}
+
+.name-spirit {
+  color: #fff4dc;
+  font-size: clamp(72px, 8.6vw, 136px);
+  margin: 0;
+}
+
+.name-truth {
+  color: var(--gold);
+  font-size: clamp(78px, 9.2vw, 146px);
+  margin: 0;
+}
+
+.name-en {
+  justify-self: center;
+  margin-bottom: -3px;
+  margin-left: -6%;
+}
+
+.name-row {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.name-row-spirit {
+  gap: clamp(16px, 2.2vw, 28px);
+}
+
+.name-row-truth {
+  gap: clamp(12px, 1.5vw, 20px);
+  margin-top: -9px;
+  padding-left: 7%;
+}
+
+.name-y {
+  flex: 0 0 auto;
+  margin-top: -7px;
+}
+
+.sound-mark {
+  align-items: center;
+  border: 1.5px solid rgba(242, 198, 109, 0.78);
+  border-radius: 999px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 4px;
+  height: clamp(58px, 5.6vw, 82px);
+  justify-content: center;
+  margin-top: 6px;
+  width: clamp(58px, 5.6vw, 82px);
+}
+
+.sound-mark span {
+  background: var(--gold-strong);
+  border-radius: 999px;
+  display: block;
+  width: 2px;
+}
+
+.sound-mark span:nth-child(1),
+.sound-mark span:nth-child(5) {
+  height: 15px;
+}
+
+.sound-mark span:nth-child(2),
+.sound-mark span:nth-child(4) {
+  height: 25px;
+}
+
+.sound-mark span:nth-child(3) {
+  height: 34px;
+}
+
+.hero-subtitle {
+  color: var(--gold-strong);
+  font-size: clamp(15px, 1.7vw, 22px);
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.45;
+  margin: 0 0 18px;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.apocalypse-page {
+  background-image:
+    linear-gradient(90deg, rgba(255, 224, 146, 0.06) 0%, rgba(255, 224, 146, 0.03) 48%, rgba(5, 4, 3, 0.12) 100%),
+    linear-gradient(180deg, rgba(255, 214, 120, 0.04) 0%, rgba(5, 4, 3, 0.1) 100%),
+    url("/assets/apocalipsis-hero.png?v=20260705-apocalipsis-esperanza");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 72px;
+}
+
+.apocalypse-hero {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  min-height: 640px;
+  padding: 92px max(18px, calc((100vw - 1120px) / 2 + 18px)) 64px 18px;
+  position: relative;
+}
+
+.apocalypse-hero::after {
+  background: linear-gradient(180deg, transparent 84%, rgba(5, 4, 3, 0.12) 100%);
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.apocalypse-hero-content {
+  margin-left: auto;
+  max-width: 600px;
+  position: relative;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.58);
+  z-index: 1;
+}
+
+.apocalypse-content {
+  padding-top: 0;
+}
+
+.apocalypse-section-heading {
+  margin-bottom: 16px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.56);
+}
+
+.apocalypse-glass {
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(242, 198, 109, 0.2);
+  box-shadow: none;
+}
+
+.apocalypse-glass h2,
+.apocalypse-section-heading h2 {
+  color: var(--gold-strong);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.52);
+}
+
+.apocalypse-glass h3 {
+  color: #fff4dc;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.48);
+}
+
+.apocalypse-glass p,
+.apocalypse-glass li {
+  color: #fff0d2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.apocalypse-feature-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.apocalypse-feature {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(242, 198, 109, 0.18);
+  box-shadow: none;
+  color: #fff0d2;
+}
+
+.apocalypse-feature span {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(242, 198, 109, 0.24);
+}
+
+.apocalypse-download-card {
+  min-height: 164px;
+}
+
+.music-page {
+  background-image:
+    linear-gradient(90deg, rgba(255, 224, 146, 0.06) 0%, rgba(255, 224, 146, 0.03) 48%, rgba(5, 4, 3, 0.12) 100%),
+    linear-gradient(180deg, rgba(255, 214, 120, 0.04) 0%, rgba(5, 4, 3, 0.1) 100%),
+    url("/assets/musica-hero-2.png?v=20260704-musica-hero-2");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-bottom: 72px;
+}
+
+.music-hero {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-end;
+  min-height: 640px;
+  padding: 92px max(18px, calc((100vw - 1120px) / 2 + 18px)) 64px 18px;
+  position: relative;
+}
+
+.music-hero::after {
+  background: linear-gradient(180deg, transparent 84%, rgba(5, 4, 3, 0.12) 100%);
+  bottom: 0;
+  content: "";
+  left: 0;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.music-hero-content {
+  margin-left: auto;
+  max-width: 600px;
+  position: relative;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.58);
+  z-index: 1;
+}
+
+.music-content {
+  padding-top: 0;
+}
+
+.music-section-heading {
+  margin-bottom: 16px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.56);
+}
+
+.music-glass {
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(242, 198, 109, 0.2);
+  box-shadow: none;
+}
+
+.music-glass h2,
+.music-section-heading h2 {
+  color: var(--gold-strong);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.52);
+}
+
+.music-glass h3 {
+  color: #fff4dc;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.48);
+}
+
+.music-glass p,
+.music-glass li {
+  color: #fff0d2;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.music-feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.music-feature {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(242, 198, 109, 0.18);
+  box-shadow: none;
+  color: #fff0d2;
+}
+
+.music-feature span {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(242, 198, 109, 0.24);
+}
+
+.music-download-card {
+  min-height: 164px;
+}
+
+.parallax-content {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 18px 18px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.translucent-panel {
+  backdrop-filter: blur(2.5px);
+  background: rgba(11, 9, 6, 0.18);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.1);
+}
+
+.hero {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
+  min-height: 620px;
+  padding: 56px 0 42px;
+}
+
+.page-hero {
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  gap: 28px;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  padding: 46px 0 36px;
+}
+
+.hero-copy {
+  align-self: center;
+}
+
+.hero-panel {
+  align-self: center;
+  background: linear-gradient(145deg, rgba(214, 168, 79, 0.12), rgba(11, 9, 6, 0.96));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.cover-frame {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background: linear-gradient(145deg, rgba(214, 168, 79, 0.18), rgba(141, 166, 110, 0.08));
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 18px;
+}
+
+.cover-image {
+  border-radius: 8px;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.apocalypse-visual {
+  align-items: center;
+  aspect-ratio: 1 / 1;
+  background:
+    radial-gradient(circle at 50% 34%, rgba(214, 168, 79, 0.24), transparent 8rem),
+    radial-gradient(circle at 50% 58%, rgba(141, 166, 110, 0.2), transparent 13rem),
+    linear-gradient(145deg, #050403, #15100a);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.apocalypse-mark {
+  border: 2px solid rgba(214, 168, 79, 0.6);
+  border-radius: 999px;
+  color: #fff;
+  font-size: clamp(64px, 12vw, 118px);
+  font-weight: 900;
+  line-height: 1;
+  padding: 22px 34px 30px;
+  text-shadow: 0 0 22px rgba(214, 168, 79, 0.72);
+}
+
+.eyebrow {
+  color: var(--gold-strong);
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+}
+
+h1 {
+  color: var(--text);
+  font-size: clamp(42px, 8vw, 76px);
+  letter-spacing: 0;
+  line-height: 0.98;
+  margin: 0;
+}
+
+h2 {
+  color: var(--text);
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+h3 {
+  color: var(--text);
+  font-size: 21px;
+  line-height: 1.2;
+  margin: 0 0 9px;
+}
+
+p,
+li {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+.lead {
+  color: #fff0d2;
+  font-size: 21px;
+  line-height: 1.55;
+  margin-top: 18px;
+  max-width: 780px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.button {
+  align-items: center;
+  background: linear-gradient(180deg, var(--gold-strong), var(--gold));
+  border: 1px solid rgba(255, 247, 232, 0.18);
+  border-radius: 999px;
+  color: #170f04;
+  display: inline-flex;
+  font-size: 15px;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 46px;
+  padding: 12px 17px;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: rgba(214, 168, 79, 0.06);
+  border-color: var(--line);
+  color: var(--gold-strong);
+}
+
+.button.disabled {
+  background: rgba(214, 168, 79, 0.14);
+  color: var(--soft);
+  cursor: not-allowed;
+}
+
+.discreet-link {
+  align-items: center;
+  border: 1px solid rgba(214, 168, 79, 0.22);
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 800;
+  min-height: 46px;
+  padding: 12px 15px;
+  text-decoration: none;
+}
+
+.discreet-link:hover {
+  color: var(--gold-strong);
+}
+
+.section {
+  padding: 42px 0 0;
+}
+
+.bible-quote-section {
+  margin: 0 auto;
+  max-width: 920px;
+  padding: clamp(64px, 9vw, 118px) 18px clamp(54px, 8vw, 98px);
+  position: relative;
+  text-align: center;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.58);
+  z-index: 2;
+}
+
+.bible-quote-section::before,
+.bible-quote-section::after {
+  background: linear-gradient(90deg, transparent, rgba(242, 198, 109, 0.64), transparent);
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 auto 30px;
+  max-width: 520px;
+}
+
+.bible-quote-section::after {
+  margin: 30px auto 0;
+}
+
+.bible-quote-section blockquote {
+  color: #fff4dc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(25px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.42;
+  margin: 0 auto;
+  max-width: 860px;
+}
+
+.bible-quote-section cite {
+  color: var(--gold-strong);
+  display: block;
+  font-size: clamp(15px, 1.4vw, 18px);
+  font-style: normal;
+  font-weight: 800;
+  margin-top: 20px;
+}
+
+.home-section {
+  background:
+    linear-gradient(180deg, rgba(5, 4, 3, 0.04) 0%, rgba(8, 6, 4, 0.02) 42%, rgba(5, 4, 3, 0.06) 100%);
+  padding: 74px 18px 96px;
+  position: relative;
+  z-index: 2;
+}
+
+.home-section-inner {
+  margin: 0 auto;
+  max-width: 1120px;
+}
+
+.home-story-section {
+  margin: 0 auto 76px;
+  max-width: 880px;
+  padding: clamp(24px, 4vw, 42px);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.58);
+}
+
+.home-story-section:nth-child(even) {
+  margin-right: 0;
+}
+
+.home-story-section:nth-child(odd) {
+  margin-left: 0;
+}
+
+.home-glass {
+  backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.028);
+  border: 1px solid rgba(242, 198, 109, 0.16);
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.home-story-section h2 {
+  color: #fff4dc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 4.6vw, 56px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.home-story-section p {
+  color: #fff0d2;
+  font-size: clamp(17px, 1.6vw, 20px);
+  line-height: 1.75;
+}
+
+.home-story-section .eyebrow {
+  color: var(--gold-strong);
+  margin-bottom: 12px;
+}
+
+.home-signature {
+  color: var(--gold-strong);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 2.4vw, 30px);
+  margin-top: 22px;
+}
+
+.home-verse {
+  border-left: 1px solid rgba(242, 198, 109, 0.42);
+  color: #fff4dc;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(20px, 2.2vw, 28px);
+  line-height: 1.48;
+  margin: 24px 0;
+  padding: 4px 0 4px 22px;
+}
+
+.home-verse cite {
+  color: var(--gold-strong);
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 800;
+  margin-top: 12px;
+}
+
+.home-discreet-button {
+  margin-top: 10px;
+}
+
+.home-help-button {
+  margin-top: 10px;
+}
+
+.home-resource-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.home-resource-card {
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.026);
+  border-color: rgba(242, 198, 109, 0.16);
+  box-shadow: none;
+}
+
+.home-resource-card p {
+  color: #fff0d2;
+}
+
+.section-heading {
+  max-width: 760px;
+}
+
+.resource-heading {
+  margin-top: 34px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resource-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.development-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 16px;
+}
+
+.development-card {
+  background: rgba(21, 16, 10, 0.08);
+  border: 1px solid rgba(214, 168, 79, 0.18);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.grid.three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card,
+.panel {
+  background: rgba(14, 11, 7, 0.08);
+  border: 1px solid rgba(214, 168, 79, 0.18);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.card {
+  min-height: 216px;
+}
+
+.panel.translucent-panel,
+.card.translucent-panel {
+  backdrop-filter: blur(2.5px);
+  background: rgba(11, 9, 6, 0.08);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.card .button {
+  margin-top: 6px;
+}
+
+.meta {
+  color: var(--gold-strong);
+  font-size: 13px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.status {
+  background: rgba(141, 166, 110, 0.14);
+  border: 1px solid rgba(141, 166, 110, 0.36);
+  border-radius: 999px;
+  color: var(--green-strong);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 900;
+  margin-top: 8px;
+  padding: 7px 11px;
+}
+
+.feature-list {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+}
+
+.feature-list li {
+  background: rgba(21, 16, 10, 0.16);
+  border: 1px solid rgba(214, 168, 79, 0.16);
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+  padding: 12px 13px;
+}
+
+.feature-card-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.feature-card {
+  align-items: center;
+  background: rgba(21, 16, 10, 0.16);
+  border: 1px solid rgba(214, 168, 79, 0.16);
+  border-radius: 8px;
+  color: var(--muted);
+  display: flex;
+  font-size: 15px;
+  font-weight: 800;
+  gap: 10px;
+  line-height: 1.42;
+  min-height: 74px;
+  padding: 13px;
+}
+
+.feature-card span {
+  align-items: center;
+  background: rgba(214, 168, 79, 0.12);
+  border: 1px solid rgba(214, 168, 79, 0.28);
+  border-radius: 999px;
+  color: var(--gold-strong);
+  display: inline-flex;
+  flex: 0 0 34px;
+  font-size: 18px;
+  font-weight: 900;
+  height: 34px;
+  justify-content: center;
+  line-height: 1;
+  width: 34px;
+}
+
+.verse {
+  color: #fff0d2;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  color: var(--soft);
+  margin: 10px auto 0;
+  max-width: 1120px;
+  padding: 24px 18px 36px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+label {
+  color: #f4f4f5;
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 7px;
+}
+
+input,
+textarea {
+  background: #080604;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: #fff;
+  font: inherit;
+  padding: 13px 12px;
+  width: 100%;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.small {
+  color: var(--soft);
+  font-size: 14px;
+}
+
+@media (max-width: 920px) {
+  .hero,
+  .page-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .grid,
+  .resource-grid,
+  .development-grid,
+  .grid.three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (hover: none), (max-width: 920px) {
+  .home-main,
+  .home-hero,
+  .apocalypse-page,
+  .music-page {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    justify-content: flex-start;
+  }
+
+  .container {
+    padding-top: 22px;
+  }
+
+  .home-hero {
+    background-image:
+      linear-gradient(90deg, rgba(5, 4, 3, 0.1) 0%, rgba(5, 4, 3, 0.42) 44%, rgba(5, 4, 3, 0.82) 100%),
+      url("/assets/inicio-hero.png?v=20260704-inicio-nuevo");
+    background-position: 34% center;
+    justify-content: flex-start;
+    height: 100svh;
+    min-height: 620px;
+    padding: 86px 18px 54px;
+  }
+
+  .home-hero-content {
+    max-width: 100%;
+  }
+
+  .home-hero-subtitle,
+  .home-hero-lines {
+    text-align: left;
+  }
+
+  .ministry-title-lockup {
+    align-items: flex-start;
+  }
+
+  .ministry-name {
+    max-width: 100%;
+  }
+
+  .name-spirit {
+    font-size: clamp(46px, 14vw, 72px);
+  }
+
+  .name-truth {
+    font-size: clamp(48px, 14vw, 78px);
+  }
+
+  .name-small {
+    font-size: clamp(25px, 8vw, 42px);
+  }
+
+  .name-en {
+    justify-self: start;
+    margin-left: 24%;
+  }
+
+  .name-row-spirit {
+    gap: 10px;
+  }
+
+  .name-row-truth {
+    gap: 8px;
+    margin-top: -4px;
+    padding-left: 4%;
+  }
+
+  .sound-mark {
+    height: clamp(42px, 13vw, 54px);
+    width: clamp(42px, 13vw, 54px);
+  }
+
+  .hero-subtitle {
+    text-align: left;
+  }
+
+  .apocalypse-page {
+    background-image:
+      linear-gradient(90deg, rgba(255, 224, 146, 0.06) 0%, rgba(255, 224, 146, 0.03) 52%, rgba(5, 4, 3, 0.16) 100%),
+      linear-gradient(180deg, rgba(255, 214, 120, 0.04) 0%, rgba(5, 4, 3, 0.12) 100%),
+      url("/assets/apocalipsis-hero.png?v=20260705-apocalipsis-esperanza");
+    background-position: 40% center;
+  }
+
+  .apocalypse-hero {
+    height: 100svh;
+    justify-content: flex-start;
+    min-height: 620px;
+    padding: 86px 18px 54px;
+  }
+
+  .apocalypse-hero-content {
+    max-width: 100%;
+  }
+
+  .music-page {
+    background-image:
+      linear-gradient(90deg, rgba(255, 224, 146, 0.06) 0%, rgba(5, 4, 3, 0.12) 48%, rgba(5, 4, 3, 0.2) 100%),
+      linear-gradient(180deg, rgba(255, 214, 120, 0.04) 0%, rgba(5, 4, 3, 0.12) 100%),
+      url("/assets/musica-hero-2.png?v=20260704-musica-hero-2");
+    background-position: 44% center;
+  }
+
+  .music-hero {
+    height: 100svh;
+    justify-content: flex-start;
+    min-height: 620px;
+    padding: 86px 18px 54px;
+  }
+
+  .music-hero-content {
+    max-width: 100%;
+  }
+
+  .music-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .apocalypse-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 36px;
+  }
+
+  .grid,
+  .resource-grid,
+  .development-grid,
+  .grid.two,
+  .grid.three,
+  .feature-list,
+  .feature-card-grid {
+    grid-template-columns: 1fr;
+  }
+}

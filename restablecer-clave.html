@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Restablecer contraseña | En eEspíritu y en vVerdad</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        align-items: center;
+        background:
+          radial-gradient(circle at top left, rgba(242, 198, 109, 0.2), transparent 34%),
+          linear-gradient(135deg, #080705 0%, #17120b 48%, #050505 100%);
+        color: #fff7e6;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        min-height: 100vh;
+        padding: 24px;
+      }
+
+      main {
+        background: rgba(255, 255, 255, 0.045);
+        border: 1px solid rgba(242, 198, 109, 0.22);
+        border-radius: 16px;
+        max-width: 520px;
+        padding: 28px;
+        width: 100%;
+      }
+
+      .brand {
+        color: #d6a94d;
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        margin: 0 0 10px;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        font-size: 32px;
+        line-height: 1.1;
+        margin: 0 0 12px;
+      }
+
+      p {
+        color: #e8dcc2;
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 18px;
+      }
+
+      label {
+        color: #fff1d0;
+        display: block;
+        font-size: 15px;
+        font-weight: 800;
+        margin: 18px 0 8px;
+      }
+
+      input {
+        background: rgba(0, 0, 0, 0.42);
+        border: 1px solid rgba(242, 198, 109, 0.22);
+        border-radius: 10px;
+        color: #fff;
+        font: inherit;
+        padding: 14px 12px;
+        width: 100%;
+      }
+
+      button,
+      .button {
+        background: linear-gradient(135deg, #d6a94d, #9f6b22);
+        border: 0;
+        border-radius: 10px;
+        color: #130f08;
+        cursor: pointer;
+        display: block;
+        font-size: 17px;
+        font-weight: 900;
+        margin-top: 18px;
+        padding: 14px 16px;
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+      }
+
+      button:disabled {
+        cursor: wait;
+        opacity: 0.7;
+      }
+
+      .message {
+        border-radius: 10px;
+        color: #fff7e6;
+        display: none;
+        margin-top: 18px;
+        padding: 12px;
+      }
+
+      .message.is-visible {
+        display: block;
+      }
+
+      .message.error {
+        background: rgba(127, 29, 29, 0.45);
+        border: 1px solid rgba(248, 113, 113, 0.35);
+      }
+
+      .message.success {
+        background: rgba(20, 83, 45, 0.45);
+        border: 1px solid rgba(74, 222, 128, 0.35);
+      }
+
+      .muted {
+        color: #b7ad99;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="brand">En eEspíritu y en vVerdad</p>
+      <h1>Restablecer contraseña</h1>
+      <p>
+        Escribe una nueva contraseña para tu cuenta. Después podrás volver a la app e iniciar sesión
+        con tu nueva clave.
+      </p>
+
+      <form id="reset-form">
+        <label for="password">Nueva contraseña</label>
+        <input id="password" name="password" type="password" minlength="6" autocomplete="new-password" required />
+
+        <label for="confirm-password">Confirmar contraseña</label>
+        <input id="confirm-password" name="confirm-password" type="password" minlength="6" autocomplete="new-password" required />
+
+        <button id="submit-button" type="submit">Cambiar contraseña</button>
+      </form>
+
+      <div id="message" class="message" role="status"></div>
+      <p class="muted">
+        Si este enlace ha caducado, vuelve a la app y solicita otro correo de recuperación.
+      </p>
+    </main>
+
+    <script type="module">
+      import { createClient } from "https://esm.sh/@supabase/supabase-js@2.108.1";
+
+      const SUPABASE_URL = "https://xwjoutfuatbaacqkvfjm.supabase.co";
+      const SUPABASE_ANON_KEY = "sb_publishable_g0wb_7TRVm0kwIMfjxuPZA_VnKM6nkb";
+      const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        auth: {
+          detectSessionInUrl: true,
+          persistSession: true,
+        },
+      });
+
+      const form = document.getElementById("reset-form");
+      const button = document.getElementById("submit-button");
+      const message = document.getElementById("message");
+
+      const showMessage = (text, type) => {
+        message.textContent = text;
+        message.className = `message is-visible ${type}`;
+      };
+
+      const prepareSession = async () => {
+        const url = new URL(window.location.href);
+        const code = url.searchParams.get("code");
+        const hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ""));
+        const accessToken = hashParams.get("access_token");
+        const refreshToken = hashParams.get("refresh_token");
+
+        if (code) {
+          const { error } = await supabase.auth.exchangeCodeForSession(code);
+          if (error) {
+            throw error;
+          }
+          return;
+        }
+
+        if (accessToken && refreshToken) {
+          const { error } = await supabase.auth.setSession({
+            access_token: accessToken,
+            refresh_token: refreshToken,
+          });
+          if (error) {
+            throw error;
+          }
+        }
+      };
+
+      prepareSession().catch(() => {
+        showMessage("No pudimos validar este enlace. Solicita un nuevo correo desde la app.", "error");
+        button.disabled = true;
+      });
+
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+
+        if (password.length < 6) {
+          showMessage("La contraseña debe tener al menos 6 caracteres.", "error");
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          showMessage("Las contraseñas no coinciden.", "error");
+          return;
+        }
+
+        button.disabled = true;
+        button.textContent = "Guardando...";
+
+        const { error } = await supabase.auth.updateUser({ password });
+
+        if (error) {
+          showMessage("No pudimos cambiar la contraseña. Solicita un nuevo enlace e inténtalo otra vez.", "error");
+          button.disabled = false;
+          button.textContent = "Cambiar contraseña";
+          return;
+        }
+
+        await supabase.auth.signOut();
+        showMessage("Contraseña actualizada correctamente. Ya puedes volver a la app e iniciar sesión.", "success");
+        form.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
