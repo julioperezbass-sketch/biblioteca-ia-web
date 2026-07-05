@@ -1,15 +1,14 @@
-const CACHE_NAME = "biblioteca-ia-musical-v37";
+const CACHE_NAME = "biblioteca-ia-musical-v38";
 const APP_SHELL = [
   "/",
   "/index.html",
   "/manifest.webmanifest",
   "/musica/",
   "/apocalipsis/",
-  "/apoyar/",
-  "/apoyar.html",
   "/ayuda-pastores/",
   "/contacto/",
   "/contacto.html",
+  "/privacidad/",
   "/restablecer-clave.html",
   "/assets/ministry.css",
   "/assets/inicio-hero.png",
