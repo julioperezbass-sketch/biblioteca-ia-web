@@ -9,22 +9,8 @@
       content="Música, enseñanza bíblica y recursos cristianos para la edificación de la Iglesia."
     />
     <link rel="stylesheet" href="/assets/ministry.css?v=20260705-apocalipsis-esperanza" />
-  
-    <meta name="theme-color" content="#111827" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Biblioteca IA" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="manifest" href="/manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
   </head>
   <body>
-
-  <form name="contacto" method="POST" data-netlify="true" hidden>
-    <input type="hidden" name="form-name" value="contacto" />
-    <input name="nombre" />
-    <input name="email" type="email" />
-    <textarea name="mensaje"></textarea>
-  </form>
     <header class="site-header">
       <nav class="nav" aria-label="Menú principal">
         <a class="brand" href="/">En eEspíritu y en vVerdad</a>
@@ -32,8 +18,10 @@
           <a href="/" aria-current="page">Inicio</a>
           <a href="/musica">Música</a>
           <a href="/apocalipsis">Apocalipsis</a>
+          <a href="/en-esto-creemos">En esto creemos</a>
           <a href="/apoyar">Ayudar</a>
           <a href="/contacto">Contacto</a>
+          <a href="/privacidad">Privacidad</a>
         </div>
       </nav>
     </header>
@@ -159,7 +147,7 @@
               Nuestro deseo no es promover una tradición humana, sino proclamar el evangelio con
               fidelidad, claridad y amor, para la gloria de Dios y la edificación de Su Iglesia.
             </p>
-            <a class="discreet-link home-discreet-button" href="/declaracion-de-fe">Leer nuestra declaración de fe</a>
+            <a class="discreet-link home-discreet-button" href="/en-esto-creemos">Leer nuestra declaración de fe</a>
           </section>
 
           <section class="home-story-section home-glass" id="recursos">
@@ -228,18 +216,10 @@
     <footer class="site-footer">
       <strong>En eEspíritu y en vVerdad</strong>
       <div class="footer-links">
-        <a href="/privacidad.html">Política de privacidad</a>
-        <a href="/eliminar-cuenta.html">Eliminar cuenta</a>
+        <a href="/privacidad">Política de privacidad</a>
+        <a href="/eliminar-cuenta">Eliminar cuenta</a>
         <a href="/contacto">Contacto</a>
       </div>
     </footer>
-  
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/service-worker.js").catch(function () {});
-      });
-    }
-  </script>
-</body>
+  </body>
 </html>
