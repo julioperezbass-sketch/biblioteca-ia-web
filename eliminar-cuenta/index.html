@@ -16,6 +16,53 @@
         margin: 0;
       }
 
+      .site-header {
+        background: rgba(26, 26, 26, 0.96);
+        border-bottom: 1px solid #3a3a3a;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+
+      .nav {
+        align-items: center;
+        display: flex;
+        gap: 18px;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1120px;
+        padding: 14px 18px;
+      }
+
+      .brand {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        border-radius: 999px;
+        color: #d4d4d8;
+        font-size: 14px;
+        font-weight: 800;
+        padding: 9px 11px;
+        text-decoration: none;
+      }
+
+      .nav-links a:hover {
+        background: rgba(167, 139, 250, 0.16);
+        color: #c4b5fd;
+      }
+
       main {
         margin: 0 auto;
         max-width: 760px;
@@ -100,9 +147,33 @@
         color: #a1a1aa;
         font-size: 14px;
       }
+
+      @media (max-width: 640px) {
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav-links {
+          justify-content: flex-start;
+        }
+      }
     </style>
   </head>
   <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Menu principal">
+        <a class="brand" href="/">En eEspíritu y en vVerdad</a>
+        <div class="nav-links">
+          <a href="/">Inicio</a>
+          <a href="/musica">Música</a>
+          <a href="/apocalipsis">Apocalipsis</a>
+          <a href="/contacto">Contacto</a>
+          <a href="/privacidad">Privacidad</a>
+        </div>
+      </nav>
+    </header>
+
     <main>
       <h1>Solicitud de eliminacion de cuenta</h1>
       <p>
