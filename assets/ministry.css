@@ -96,6 +96,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   margin: 0;
   max-width: none;
   padding: 0;
@@ -109,6 +110,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   justify-content: flex-end;
   height: 100vh;
@@ -279,6 +281,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
   padding-bottom: 72px;
 }
@@ -373,6 +376,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
   padding-bottom: 72px;
 }
@@ -1034,6 +1038,15 @@ textarea {
   .development-grid,
   .grid.three {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (hover: none), (max-width: 920px) {
+  .home-main,
+  .home-hero,
+  .apocalypse-page,
+  .music-page {
+    background-attachment: scroll;
   }
 }
 
