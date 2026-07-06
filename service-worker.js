@@ -1,4 +1,4 @@
-const CACHE_NAME = "biblioteca-ia-musical-v40";
+const CACHE_NAME = "biblioteca-ia-musical-v41";
 const APP_SHELL = [
   "/",
   "/index.html",
@@ -13,6 +13,7 @@ const APP_SHELL = [
   "/assets/ministry.css",
   "/assets/inicio-hero.png",
   "/assets/apocalipsis-hero.png",
+  "/assets/contacto-hero.png",
   "/assets/musica-hero-2.png",
   "/icons/icon-192.png",
   "/icons/icon-512.png"

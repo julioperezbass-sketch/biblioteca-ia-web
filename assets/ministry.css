@@ -30,6 +30,35 @@ body {
   margin: 0;
 }
 
+body.contact-page {
+  background: #050403;
+  isolation: isolate;
+  min-height: 100vh;
+  position: relative;
+}
+
+body.contact-page::before {
+  background-color: #050403;
+  background-image:
+    linear-gradient(90deg, rgba(5, 4, 3, 0.08) 0%, rgba(5, 4, 3, 0.06) 48%, rgba(5, 4, 3, 0.1) 100%),
+    url("/assets/contacto-hero.png?v=20260707-contacto-estable");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: 0;
+}
+
+body.contact-page .site-header,
+body.contact-page main,
+body.contact-page .site-footer {
+  position: relative;
+  z-index: 1;
+}
+
 a {
   color: inherit;
 }
@@ -90,27 +119,30 @@ a {
 }
 
 .home-main {
+  background: #050403;
+  isolation: isolate;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  position: relative;
+}
+
+.home-main::before {
   background-image:
     linear-gradient(90deg, rgba(255, 224, 146, 0.05) 0%, rgba(255, 224, 146, 0.03) 48%, rgba(5, 4, 3, 0.08) 100%),
     url("/assets/inicio-hero.png?v=20260704-inicio-nuevo");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  margin: 0;
-  max-width: none;
-  padding: 0;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
 }
 
 .home-hero {
   align-items: center;
-  background-image:
-    linear-gradient(90deg, rgba(255, 224, 146, 0.04) 0%, rgba(255, 224, 146, 0.02) 46%, rgba(5, 4, 3, 0.12) 100%),
-    url("/assets/inicio-hero.png?v=20260704-inicio-nuevo");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
   display: flex;
   justify-content: flex-end;
   height: 100vh;
@@ -274,6 +306,14 @@ a {
 }
 
 .apocalypse-page {
+  background: #050403;
+  isolation: isolate;
+  min-height: 100vh;
+  padding-bottom: 72px;
+  position: relative;
+}
+
+.apocalypse-page::before {
   background-image:
     linear-gradient(90deg, rgba(255, 224, 146, 0.06) 0%, rgba(255, 224, 146, 0.03) 48%, rgba(5, 4, 3, 0.12) 100%),
     linear-gradient(180deg, rgba(255, 214, 120, 0.04) 0%, rgba(5, 4, 3, 0.1) 100%),
@@ -281,9 +321,11 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-  padding-bottom: 72px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
 }
 
 .apocalypse-hero {
@@ -369,6 +411,14 @@ a {
 }
 
 .music-page {
+  background: #050403;
+  isolation: isolate;
+  min-height: 100vh;
+  padding-bottom: 72px;
+  position: relative;
+}
+
+.music-page::before {
   background-image:
     linear-gradient(90deg, rgba(255, 224, 146, 0.06) 0%, rgba(255, 224, 146, 0.03) 48%, rgba(5, 4, 3, 0.12) 100%),
     linear-gradient(180deg, rgba(255, 214, 120, 0.04) 0%, rgba(5, 4, 3, 0.1) 100%),
@@ -376,9 +426,11 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-  padding-bottom: 72px;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: fixed;
+  z-index: -1;
 }
 
 .music-hero {
@@ -505,6 +557,14 @@ a {
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 22px;
+}
+
+body.contact-page .hero-panel,
+body.contact-page .card,
+body.contact-page .panel {
+  backdrop-filter: none;
+  background: transparent;
+  box-shadow: none;
 }
 
 .cover-frame {
