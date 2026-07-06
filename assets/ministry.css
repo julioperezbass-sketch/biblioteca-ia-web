@@ -30,17 +30,6 @@ body {
   margin: 0;
 }
 
-body.contact-page {
-  background-color: #050403;
-  background-image:
-    linear-gradient(90deg, rgba(5, 4, 3, 0.78) 0%, rgba(5, 4, 3, 0.58) 46%, rgba(5, 4, 3, 0.36) 100%),
-    linear-gradient(180deg, rgba(5, 4, 3, 0.18) 0%, rgba(5, 4, 3, 0.88) 100%),
-    url("/assets/contacto-hero.png?v=20260707-contacto");
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 a {
   color: inherit;
 }
